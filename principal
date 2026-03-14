@@ -1,3 +1,11 @@
+import java.time.LocalDateTime;
+
 public class principal {
   System.out.print("Hola mundo");
+}
+public class mostrarFechaHora {
+
+        LocalDateTime ahora = LocalDateTime.now();
+        System.out.println("Fecha y hora actuales: " + ahora);
+
 }
