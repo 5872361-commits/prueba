@@ -1,11 +1,39 @@
-import java.time.LocalDateTime;
+import java.util.Scanner;
 
-public class principal {
-  System.out.print("Hola mundo");
-}
-public class mostrarFechaHora {
+public class Principal {
 
-        LocalDateTime ahora = LocalDateTime.now();
-        System.out.println("Fecha y hora actuales: " + ahora);
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
 
+        System.out.print("¿Cuántos usuarios quieres crear? ");
+        int cantidad = teclado.nextInt();
+        teclado.nextLine(); // limpiar buffer
+
+        Usuario[] usuarios = crearArrayUsuarios(cantidad);
+
+        System.out.println("\nLISTA DE USUARIOS\n");
+        for (Usuario u : usuarios) {
+            System.out.println(u);
+        }
+    }
+
+    public static Usuario[] crearArrayUsuarios(int numero) {
+        Scanner sc = new Scanner(System.in);
+        Usuario[] lista = new Usuario[numero];
+
+        for (int i = 0; i < numero; i++) {
+            System.out.println("\nUsuario " + (i + 1));
+
+            System.out.print("Nombre: ");
+            String nombre = sc.nextLine();
+
+            System.out.print("Edad: ");
+            int edad = sc.nextInt();
+            sc.nextLine(); // limpiar buffer
+
+            lista[i] = new Usuario(nombre, edad);
+        }
+
+        return lista;
+    }
 }
