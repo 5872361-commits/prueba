@@ -1,0 +1,3 @@
+public class principal {
+  System.out.print("Hola mundo");
+}
